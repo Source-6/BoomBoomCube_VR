@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  cube: {fileID: 0}
+  cube: {fileID: 391298720459081638, guid: 4bf6b2c778e085541b7d40cf687be4ca, type: 3}
   timeTillNextLevel: 30
   startingSpawnTime: 5
   spawnTime: 0
