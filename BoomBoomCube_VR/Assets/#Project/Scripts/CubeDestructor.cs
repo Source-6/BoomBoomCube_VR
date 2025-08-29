@@ -13,7 +13,7 @@ public class CubeDestructor : MonoBehaviour
             crushingCubesAudio.Play();
             // Controller vibration
             // Call object "anim" (method) that reduces its size
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
 
         if (other.gameObject.tag == "DestroyZone")
