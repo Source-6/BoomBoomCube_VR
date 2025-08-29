@@ -18,6 +18,10 @@ public class CubeGenerator : MonoBehaviour
 
     [SerializeField] float velocityIncrease = 1;
 
+
+    public AudioSource crushingCubesAudio;
+    public AudioSource missedCubeAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +52,10 @@ public class CubeGenerator : MonoBehaviour
 
         Rigidbody cubeClone = Instantiate(cube, spawnPoint.position, spawnPoint.rotation);
         cubeClone.linearVelocity *= velocityIncrease; // Increase cubes starting velocity 
+
+        // Assigning Audio Sources 
+        cubeClone.GetComponent<CubeDestructor>().crushingCubesAudio = crushingCubesAudio;
+        cubeClone.GetComponent<CubeDestructor>().missedCubeAudio = missedCubeAudio;
 
         Invoke("Spawn", repeat); // Calls again the function
     }

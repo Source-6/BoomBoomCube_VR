@@ -2,17 +2,13 @@ using UnityEngine;
 
 public class CubeDestructor : MonoBehaviour
 {
-    [SerializeField] Collider leftHandCollider;
-    [SerializeField] Collider rightHandCollider;
-    [SerializeField] Collider invisibleWallCollider;
-
-    [SerializeField] AudioSource crushingCubesAudio;
-    [SerializeField] AudioSource missedCubeAudio;
+    public AudioSource crushingCubesAudio;
+    public AudioSource missedCubeAudio;
 
 
     void OnTriggerEnter(Collider other)
     {
-        if (other == leftHandCollider || other == rightHandCollider)
+        if (other.gameObject.tag == "Hands")
         {
             crushingCubesAudio.Play();
             // Controller vibration
@@ -20,7 +16,7 @@ public class CubeDestructor : MonoBehaviour
             Destroy(gameObject, 1);
         }
 
-        if (other == invisibleWallCollider)
+        if (other.gameObject.tag == "DestroyZone")
         {
             missedCubeAudio.Play();
             Destroy(gameObject);
