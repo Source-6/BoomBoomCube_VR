@@ -3,19 +3,20 @@ using UnityEngine;
 
 public class CubeGenerator : MonoBehaviour
 {
-    public Transform spawnPoint;
-    public Collider cube;
+    [SerializeField] Transform spawnPoint;
+    [SerializeField] Rigidbody cube;
+
 
     float timer;
-    public float timeTillNextLevel = 30;
+    [SerializeField] float timeTillNextLevel = 30;
 
-    public short startingSpawnTime = 5;
+
+    [SerializeField] short startingSpawnTime = 5;
     [SerializeField] private float spawnTime; // Will increase over time
-    public float spawnTimeReduction = 0.2f;
-    public float repeat;
+    [SerializeField] float spawnTimeReduction = 0.2f;
+    [SerializeField] float repeat;
 
-    public Vector3 startingVelocity = Vector3.forward; // Cube is moving forward
-    [SerializeField] private Vector3 cubeVelocity; // Will increase over time. (?)
+    [SerializeField] float velocityIncrease = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,9 +34,9 @@ public class CubeGenerator : MonoBehaviour
 
         if (timer >= timeTillNextLevel)
         {
-            timeTillNextLevel += timer; // Will (normally) always be greater than the timer by 30seconds.
+            timeTillNextLevel += timer; // Will (normally) always be greater than the timer by 30 seconds.
             spawnTime -= spawnTimeReduction; // Spawns cubes more frequently
-            cubeVelocity.z *= 1.2f; // Cubes go faster
+            velocityIncrease += 0.2f;
         }
     }
 
@@ -46,8 +47,9 @@ public class CubeGenerator : MonoBehaviour
         repeat = spawnTime + rdn; // Small time variations between cubes spawning 
 
         Rigidbody cubeClone = Instantiate(cube, spawnPoint.position, spawnPoint.rotation);
+        cubeClone.linearVelocity *= velocityIncrease; // Increase cubes starting velocity 
 
-        Invoke("Spawn", repeat);
+        Invoke("Spawn", repeat); // Calls again the function
     }
     
 }
