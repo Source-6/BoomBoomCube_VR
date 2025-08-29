@@ -15,7 +15,7 @@ public class CubeDestructor : MonoBehaviour
         {
             crushingCubesAudio.Play();
             // Controller vibration
-            // Call object method that reduces its size
+            // Call object "anim" (method) that reduces its size
             Destroy(gameObject, 1);
         }
 
