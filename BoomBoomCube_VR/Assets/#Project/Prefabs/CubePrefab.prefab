@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 20220206002703379}
   - component: {fileID: 391298720459081638}
   - component: {fileID: -7073769542079250879}
+  - component: {fileID: 4383524531840307547}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CubePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,3 +153,19 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 1}
   position: {fileID: 0}
   cube: {fileID: 0}
+--- !u!114 &4383524531840307547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770576196591630058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd229597ee1d2b46ac3449e7f409150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handsCollider: {fileID: 0}
+  invisibleWallCollider: {fileID: 0}
+  crushingCubesAudio: {fileID: 0}
+  missedCubeAudio: {fileID: 0}
