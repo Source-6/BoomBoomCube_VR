@@ -12,7 +12,7 @@ public class CubeDestructor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other == handsCollider)
+        if (other == leftHandCollider || other == rightHandCollider)
         {
             crushingCubesAudio.Play();
             // Controller vibration

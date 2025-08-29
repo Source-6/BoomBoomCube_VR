@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 20220206002703379}
   - component: {fileID: 391298720459081638}
   - component: {fileID: -7073769542079250879}
-  - component: {fileID: 4383524531840307547}
+  - component: {fileID: 7608090338754968111}
   m_Layer: 0
   m_Name: CubePrefab
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 1}
   position: {fileID: 0}
   cube: {fileID: 0}
---- !u!114 &4383524531840307547
+--- !u!114 &7608090338754968111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
