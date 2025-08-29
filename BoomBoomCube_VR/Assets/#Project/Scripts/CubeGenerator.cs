@@ -15,7 +15,7 @@ public class CubeGenerator : MonoBehaviour
 
     public Vector3 startingVelocity = Vector3.forward; // Cube is moving forward
 
-    [SerializeField] private Vector3 velocity; // Will increase over time. (?)
+    [SerializeField] private Vector3 velocity; // Will increase over time. (?) 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
