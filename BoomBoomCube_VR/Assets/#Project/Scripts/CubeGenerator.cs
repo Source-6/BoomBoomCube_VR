@@ -11,11 +11,11 @@ public class CubeGenerator : MonoBehaviour
 
     public short startingSpawnTime = 5;
     [SerializeField] private float spawnTime; // Will increase over time
+    public float spawnTimeReduction = 0.2f;
     public float repeat;
 
     public Vector3 startingVelocity = Vector3.forward; // Cube is moving forward
-
-    [SerializeField] private Vector3 velocity; // Will increase over time. (?) 
+    [SerializeField] private Vector3 cubeVelocity; // Will increase over time. (?)
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,8 +34,8 @@ public class CubeGenerator : MonoBehaviour
         if (timer >= timeTillNextLevel)
         {
             timeTillNextLevel += timer; // Will (normally) always be greater than the timer by 30seconds.
-            spawnTime -= 0.2f; // Spawns cubes more frequently
-            velocity.z *= 1.2f; // Cubes go faster
+            spawnTime -= spawnTimeReduction; // Spawns cubes more frequently
+            cubeVelocity.z *= 1.2f; // Cubes go faster
         }
     }
 
