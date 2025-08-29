@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CubeDestructor : MonoBehaviour
 {
-    [SerializeField] Collider handsCollider;
+    [SerializeField] Collider leftHandCollider;
+    [SerializeField] Collider rightHandCollider;
     [SerializeField] Collider invisibleWallCollider;
 
     [SerializeField] AudioSource crushingCubesAudio;
